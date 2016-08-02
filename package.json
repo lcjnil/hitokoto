@@ -1,0 +1,26 @@
+{
+  "name": "hitokoto",
+  "version": "0.0.1",
+  "description": "Hitokoto node version.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lcjnil/hitokoto.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lcjnil/hitokoto/issues"
+  },
+  "homepage": "https://github.com/lcjnil/hitokoto#readme",
+  "devDependencies": {
+    "eslint": "^3.2.2",
+    "eslint-config-airbnb-base": "^5.0.1",
+    "eslint-plugin-import": "^1.12.0",
+    "install": "^0.8.1",
+    "npm": "^3.10.5"
+  }
+}
