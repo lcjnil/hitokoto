@@ -4,7 +4,9 @@
   "description": "Hitokoto node version.",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "start": "DEBUG=app* node index",
+    "dev": "DEBUG=app* nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -17,10 +19,18 @@
   },
   "homepage": "https://github.com/lcjnil/hitokoto#readme",
   "devDependencies": {
+    "babel-eslint": "^6.1.2",
+    "babel-preset-stage-3": "^6.11.0",
+    "babel-register": "^6.11.6",
     "eslint": "^3.2.2",
     "eslint-config-airbnb-base": "^5.0.1",
+    "eslint-plugin-babel": "^3.3.0",
     "eslint-plugin-import": "^1.12.0",
     "install": "^0.8.1",
     "npm": "^3.10.5"
+  },
+  "dependencies": {
+    "debug": "^2.2.0",
+    "koa": "^1.2.1"
   }
 }
