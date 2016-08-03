@@ -1,17 +1,11 @@
 const Koa = require('koa');
-const debug = require('debug')('app');
+const hitokotoApi = require('./api/hitokoto');
+const cors = require('kcors');
 
 const app = new Koa();
 
-app.use(async (ctx, next) => {
-  const start = new Date();
-  await next();
-  const ms = new Date() - start;
-  debug(`Request Time is ${ms}`);
-});
-
-app.use(ctx => {
-  ctx.body = 'Hello Koa';
-});
+app.use(cors());
+app.use(hitokotoApi.routes())
+  .use(hitokotoApi.allowedMethods());
 
 app.listen(3000);

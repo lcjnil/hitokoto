@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "eslint .",
     "start": "DEBUG=app* node index",
-    "dev": "DEBUG=app* nodemon index.js"
+    "dev": "DEBUG=app* nodemon index.js",
+    "doc": "apidoc -i ./api -o apidoc"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,7 @@
   },
   "homepage": "https://github.com/lcjnil/hitokoto#readme",
   "devDependencies": {
+    "apidoc": "^0.16.1",
     "babel-eslint": "^6.1.2",
     "babel-preset-stage-3": "^6.11.0",
     "babel-register": "^6.11.6",
@@ -31,6 +33,13 @@
   },
   "dependencies": {
     "debug": "^2.2.0",
-    "koa": "^1.2.1"
+    "kcors": "^2.1.1",
+    "koa": "^1.2.1",
+    "koa-router": "^7.0.1"
+  },
+  "apidoc": {
+    "title": "Hitokoto API Doc",
+    "url": "http://localhost:3000",
+    "sampleUrl": "http://localhost:3000"
   }
 }
