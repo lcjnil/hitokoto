@@ -20,11 +20,15 @@ const debug = require('debug')('app:api');
  *       "date":"2016-08-03T15:10:39.878Z"
  *    }
  */
-router.get('/rand', ctx => {
+router.get('/rand', async (ctx) => {
+  const cnt = await Hitokoto.count();
+  const random = Math.floor(Math.random() * cnt);
+  const [hitokoto] = await Hitokoto.find(null, null, { skip: random, limit: 1 }).exec();
+
   ctx.body = {
-    id: '111111111',
-    hitokoto: '呐，知道么，樱花飘落的速度，是每秒五厘米哦~',
-    date: new Date(),
+    id: hitokoto._id,
+    hitokoto: hitokoto.hitokoto,
+    date: hitokoto.date
   };
 });
 
