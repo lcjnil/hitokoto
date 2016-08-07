@@ -28,7 +28,9 @@ router.get('/rand', async (ctx) => {
   ctx.body = {
     id: hitokoto._id,
     hitokoto: hitokoto.hitokoto,
-    date: hitokoto.date
+    date: hitokoto.date,
+    author: hitokoto.author,
+    source: hitokoto.source
   };
 });
 
@@ -56,10 +58,8 @@ router.get('/rand', async (ctx) => {
  *    }
  */
 router.post('/', async (ctx) => {
-  const { hitokoto } = ctx.request.body;
-  debug(hitokoto);
-  const instance = await Hitokoto.create({ hitokoto });
-  debug(instance);
+  const { hitokoto, author, source } = ctx.request.body;
+  const instance = await Hitokoto.create({ hitokoto, author, source });
 
   ctx.response.status = 200;
   ctx.response.body = instance.toJSON();
